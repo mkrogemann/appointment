@@ -1,0 +1,10 @@
+env:
+  - TRAVIS=true
+language: ruby
+rvm:
+  - "1.8.7"
+  - "1.9.3"
+  - "2.0.0"
+script:
+  - COVERAGE=true bundle exec rspec spec
+  - COVERAGE=true bundle exec cucumber
