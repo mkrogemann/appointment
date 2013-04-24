@@ -1,0 +1,7 @@
+/*.gem
+/.rvmrc
+/rspec
+/Gemfile.lock
+/coverage
+/cucumber
+.DS_Store
