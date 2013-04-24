@@ -16,6 +16,6 @@ Gem::Specification.new do |gem|
   gem.version       = Core::VERSION
 
   gem.add_development_dependency('rspec', '~> 2.13.0')
-  gem.add_development_dependency('cucumber', '~> 1.2.3')
+  gem.add_development_dependency('cucumber', '~> 1.3.1')
   gem.add_development_dependency('simplecov', '~> 0.7.1')
 end
