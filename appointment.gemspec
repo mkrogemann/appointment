@@ -4,9 +4,9 @@ require File.expand_path('../lib/core/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Markus Krogemann"]
   gem.email         = ["markus@krogemann.de"]
-  gem.description   = %q{oO: Appointments, ... waiting for Inspquo}
+  gem.description   = %q{A gem that supports creating appointments}
   gem.summary       = %q{Appointments}
-  gem.homepage      = "https://github.com/ruby-spa/appointment"
+  gem.homepage      = "https://github.com/mkrogemann/appointment"
   gem.license       = 'MIT'
 
   gem.files         = Dir['lib/**/*.rb']
@@ -15,7 +15,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Core::VERSION
 
-  gem.add_development_dependency('rspec', '~> 2.13.0')
-  gem.add_development_dependency('cucumber', '~> 1.3.1')
+  gem.add_development_dependency('rspec', '~> 2.14.1')
+  gem.add_development_dependency('cucumber', '~> 1.3.6')
   gem.add_development_dependency('simplecov', '~> 0.7.1')
+  gem.add_development_dependency('metric_fu', '~> 4.4.0') unless ENV['TRAVIS'] == 'true'
 end
