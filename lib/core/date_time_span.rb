@@ -25,10 +25,10 @@ module Core
 
     def overlaps?(other)
       other == self ||
-      begin_dt <= other.begin_dt && end_dt >= other.end_dt ||
-      other.begin_dt <= begin_dt && other.end_dt >= end_dt ||
-      begin_dt < other.begin_dt && end_dt > other.begin_dt && end_dt < other.end_dt ||
-      begin_dt > other.begin_dt && end_dt > other.end_dt && begin_dt < other.end_dt
+      starts_before_ends_after(other) ||
+      starts_after_ends_before(other) ||
+      starts_before_ends_before(other) ||
+      starts_after_ends_after(other)
     end
 
     private
@@ -41,5 +41,20 @@ module Core
       [DateTime.parse(dts[0]), DateTime.parse(dts[1])]
     end
 
+    def starts_before_ends_after(other)
+      begin_dt <= other.begin_dt && end_dt >= other.end_dt
+    end
+
+    def starts_after_ends_before(other)
+      other.begin_dt <= begin_dt && other.end_dt >= end_dt
+    end
+
+    def starts_before_ends_before(other)
+      begin_dt < other.begin_dt && end_dt > other.begin_dt && end_dt < other.end_dt
+    end
+
+    def starts_after_ends_after(other)
+      begin_dt > other.begin_dt && end_dt > other.end_dt && begin_dt < other.end_dt
+    end
   end
 end
