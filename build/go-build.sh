@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 rvm use 1.9.3@appointment --create --fuzzy
-bundle
+bundle update
 [ -d rspec ] && rm -rf rspec
 COVERAGE=true bundle exec rspec --out rspec/rspec.xml --format html --out rspec/rspec.html
 
