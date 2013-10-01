@@ -2,9 +2,7 @@ require 'spec_helper'
 
 module Core
   describe Alternatives do
-
     describe '#for_date' do
-
       it 'has alternatives for given date' do
         dts = DateTimeSpanBuilder.new
           .starting('2012-11-09T14:30:00+01:00')
@@ -26,7 +24,6 @@ module Core
         alternatives.for_date_and_duration('2012-11-09', 30).should have(1).items
         alternatives.for_date_and_duration(Date.parse('2012-11-09'), 30).should have(1).items
       end
-
     end
   end
 end
