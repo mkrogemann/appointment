@@ -1,5 +1,6 @@
 /*.gem
-/.rvmrc
+/.ruby-gemset
+/.ruby-version
 /rspec
 /Gemfile.lock
 /coverage
