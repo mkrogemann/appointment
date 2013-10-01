@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'core'
 
 module Core
   describe Worker do
@@ -37,6 +36,5 @@ module Core
         worker.appointments.should == [appointment]
       end
     end
-
   end
 end

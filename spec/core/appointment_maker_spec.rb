@@ -1,10 +1,8 @@
 require 'spec_helper'
-require 'core'
 
 module Core
   describe AppointmentMaker do
     describe '#request' do
-
       context 'perfect match' do
         it 'should return an Appointment' do
           worker = double('worker')
@@ -33,7 +31,6 @@ module Core
           alternatives.should be_a(Alternatives)
         end
       end
-
     end
   end
 end

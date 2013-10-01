@@ -1,19 +1,14 @@
 require 'spec_helper'
-require 'core'
 
 module Core
-
   describe DateTimeSpanBuilder do
-
-    context "#build" do
-
+    describe "#build" do
       it "should construct an instance of DateTimeSpan spanning from 'starting' to 'until'" do
         DateTimeSpanBuilder.new
           .starting('2012-11-09T14:20:00+01:00')
           .until('2012-11-09T15:10:00+01:00')
           .build
           .should == DateTimeSpan.new('2012-11-09T14:20:00+01:00 -> 2012-11-09T15:10:00+01:00')
-
       end
 
       it "allows adding a duration in minutes to a given start time" do
