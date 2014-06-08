@@ -5,7 +5,7 @@ module Core
     describe '#initialize' do
       it 'creates an Appointment (happy path)' do
         worker = double('worker')
-        worker.stub(:appointments).and_return []
+        expect(worker).to receive(:appointments).and_return []
         activity = double('activity')
         dts = DateTimeSpanBuilder.new
           .starting('2012-11-09T15:30:00+01:00')

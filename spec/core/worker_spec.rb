@@ -6,13 +6,13 @@ module Core
       it 'returns true if it can do given activity' do
         worker = Worker.new([Activity.new(:activity_1, 60)])
         activity = Activity.new(:activity_1, 60)
-        worker.can_do?(activity).should be_true
+        worker.can_do?(activity).should be_truthy
       end
 
       it 'returns false if it cannot do given activity' do
         worker = Worker.new([Activity.new(:activity_1, 60)])
         activity = Activity.new(:activity_2, 60)
-        worker.can_do?(activity).should be_false
+        worker.can_do?(activity).should be_falsey
       end
     end
 
@@ -24,7 +24,7 @@ module Core
           .starting(tomorrow)
           .lasting(60)
           .build()
-        worker.available?(date_time_span).should be_true
+        worker.available?(date_time_span).should be_truthy
       end
     end
 

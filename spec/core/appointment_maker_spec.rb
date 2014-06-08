@@ -6,7 +6,7 @@ module Core
       context 'perfect match' do
         it 'should return an Appointment' do
           worker = double('worker')
-          worker.stub(:appointments).and_return []
+          expect(worker).to receive(:appointments).and_return []
           activity = double('activity')
           dts = DateTimeSpanBuilder.new
             .starting('2012-11-09T15:30:00+01:00')
@@ -19,14 +19,14 @@ module Core
       context 'alternatives' do
         it 'should return alternatives if worker is appointed at desired time', :type => 'integration' do
           worker = double('worker')
-          worker.stub(:appointments).and_return []
+          expect(worker).to receive(:appointments).and_return []
           activity = double('activity')
           dts = DateTimeSpanBuilder.new
             .starting('2012-11-09T15:30:00+01:00')
             .until('2012-11-09T15:50:00+01:00')
             .build
           fixed_appointment = AppointmentMaker.new.request(activity, dts, worker)
-          worker.stub(:appointments).and_return [fixed_appointment]
+          expect(worker).to receive(:appointments).and_return [fixed_appointment]
           alternatives = AppointmentMaker.new.request(activity, dts, worker)
           alternatives.should be_a(Alternatives)
         end

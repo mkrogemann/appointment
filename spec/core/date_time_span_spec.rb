@@ -66,7 +66,7 @@ module Core
             .starting('2012-11-09T14:20:00+01:00')
             .until('2012-11-09T15:10:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
 
         # ----  ----
@@ -77,7 +77,7 @@ module Core
             .starting('2012-11-09T14:20:00+01:00')
             .until('2012-11-09T15:00:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
 
         # ----
@@ -88,7 +88,7 @@ module Core
             .starting('2012-11-09T14:30:00+01:00')
             .until('2012-11-09T15:10:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
 
         # ----
@@ -100,7 +100,7 @@ module Core
             .starting('2012-11-09T14:30:00+01:00')
             .until('2012-11-09T15:00:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
       end
 
@@ -113,7 +113,7 @@ module Core
             .starting('2012-11-09T14:20:00+01:00')
             .until('2012-11-09T15:20:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
 
         #       ----
@@ -124,7 +124,7 @@ module Core
             .starting('2012-11-09T14:00:00+01:00')
             .until('2012-11-09T15:10:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
 
         #       ----
@@ -136,7 +136,7 @@ module Core
             .starting('2012-11-09T14:10:00+01:00')
             .until('2012-11-09T15:20:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
       end
 
@@ -150,7 +150,7 @@ module Core
             .starting('2012-11-09T14:30:00+01:00')
             .until('2012-11-09T15:20:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
 
         #       ----
@@ -162,7 +162,7 @@ module Core
             .starting('2012-11-09T14:10:00+01:00')
             .until('2012-11-09T15:00:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_true
+          dts1.overlaps?(dts2).should be_truthy
         end
       end
 
@@ -175,7 +175,7 @@ module Core
             .starting('2012-11-09T15:10:00+01:00')
             .until('2012-11-09T15:30:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_false
+          dts1.overlaps?(dts2).should be_falsey
         end
 
         #       ----
@@ -186,7 +186,7 @@ module Core
             .starting('2012-11-09T13:50:00+01:00')
             .until('2012-11-09T14:20:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_false
+          dts1.overlaps?(dts2).should be_falsey
         end
 
         # ----
@@ -198,7 +198,7 @@ module Core
             .starting('2012-11-09T15:30:00+01:00')
             .until('2012-11-09T15:50:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_false
+          dts1.overlaps?(dts2).should be_falsey
         end
 
         #       ----
@@ -210,7 +210,7 @@ module Core
             .starting('2012-11-09T14:00:00+01:00')
             .until('2012-11-09T14:10:00+01:00')
             .build
-          dts1.overlaps?(dts2).should be_false
+          dts1.overlaps?(dts2).should be_falsey
         end
       end
     end

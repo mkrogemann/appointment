@@ -10,8 +10,8 @@ module Core
           .build
         alternatives = Alternatives.new([dts])
 
-        alternatives.for_date('2012-11-09').should have(1).items
-        alternatives.for_date(Date.parse('2012-11-09')).should have(1).items
+        alternatives.for_date('2012-11-09').size.should eq(1)
+        alternatives.for_date(Date.parse('2012-11-09')).size.should eq(1)
       end
 
       it 'has alternatives for given date and duration' do
@@ -21,8 +21,8 @@ module Core
           .build
         alternatives = Alternatives.new([dts])
 
-        alternatives.for_date_and_duration('2012-11-09', 30).should have(1).items
-        alternatives.for_date_and_duration(Date.parse('2012-11-09'), 30).should have(1).items
+        alternatives.for_date_and_duration('2012-11-09', 30).size.should eq(1)
+        alternatives.for_date_and_duration(Date.parse('2012-11-09'), 30).size.should eq(1)
       end
     end
   end
